@@ -41,9 +41,6 @@ def probando_forms(request):
     return render(request, template_name, context)
 
 
-
-
-
 def home(request):
     return render(request, 'restaurant/index.html', {'prueba': 1007})
 
