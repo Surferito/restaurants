@@ -2,20 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="606d45ba-6cab-4ef8-ba66-9b4591399a60" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/base.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/mis_preferidos.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/prueba.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/prueba_form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/snippets/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtasker/urls.py" afterPath="$PROJECT_DIR$/foodtasker/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/admin.py" afterPath="$PROJECT_DIR$/foodtaskerapp/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/forms.py" afterPath="$PROJECT_DIR$/foodtaskerapp/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/models.py" afterPath="$PROJECT_DIR$/foodtaskerapp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/home.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_in.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_in.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_up.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_up.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/views.py" afterPath="$PROJECT_DIR$/foodtaskerapp/views.py" />
     </list>
     <ignored path="foodtasker.iws" />
@@ -41,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/foodtaskerapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.7222223">
-              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.49360147">
+              <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -63,10 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prueba_form.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="prueba_form.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/prueba_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12998267">
+            <state vertical-scroll-proportion="-3.125">
               <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
               <folding />
             </state>
@@ -91,6 +77,16 @@
               <folding>
                 <element signature="e#1#33#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/foodtasker/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="11.666667">
+              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,9 +130,9 @@
         <option value="$PROJECT_DIR$/foodtaskerapp/templates/snippets/footer.html" />
         <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_in.html" />
         <option value="$PROJECT_DIR$/foodtasker/urls.py" />
-        <option value="$PROJECT_DIR$/foodtaskerapp/views.py" />
         <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/index.html" />
         <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/mis_preferidos.html" />
+        <option value="$PROJECT_DIR$/foodtaskerapp/views.py" />
       </list>
     </option>
   </component>
@@ -660,14 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/foodtasker/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.37037">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_up.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.25">
@@ -744,26 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/foodtaskerapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7222223">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/foodtasker/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.111111">
-          <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="86" />
-          <folding>
-            <element signature="e#1#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.625">
@@ -782,9 +750,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/prueba_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12998267">
+        <state vertical-scroll-proportion="-3.125">
           <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foodtasker/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.111111">
+          <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="86" />
+          <folding>
+            <element signature="e#1#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foodtasker/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.666667">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foodtaskerapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49360147">
+          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

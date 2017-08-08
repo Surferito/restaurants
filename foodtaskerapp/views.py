@@ -32,7 +32,7 @@ def probando_forms(request):
     errors = None
     if form.is_valid():
         form.save()
-        return redirect(restaurants)
+        return redirect(mis_preferidos)
     if form.errors:
         errors = form.errors
 
