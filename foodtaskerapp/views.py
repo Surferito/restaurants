@@ -3,10 +3,49 @@ from django.contrib.auth.decorators import login_required
 from foodtaskerapp.forms import UserForm, RestaurantForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
+
+from .models import Restaurant, Carta
+from .forms import PruebaForms
 
 # Create your views here.
+@login_required(login_url='/restaurant/sign-in/')
+def restaurants(request):
+    template_name = "restaurant/prueba.html"
+    queryset = Restaurant.objects.all()
+    context = {
+        "restaurantes": queryset
+    }
+    return render(request, template_name, context)
+
+def mis_preferidos(request):
+    template_name = "restaurant/mis_preferidos.html"
+    queryset = Carta.objects.all()
+    context = {
+        "platos": queryset
+    }
+    return render(request, template_name, context)
+
+
+def probando_forms(request):
+    form = PruebaForms(request.POST or None)
+    errors = None
+    if form.is_valid():
+        form.save()
+        return redirect(restaurants)
+    if form.errors:
+        errors = form.errors
+
+    template_name = "restaurant/prueba_form.html"
+    context = {"form": form, "errors": errors}
+    return render(request, template_name, context)
+
+
+
+
+
 def home(request):
-    return redirect(restaurant_home)
+    return render(request, 'restaurant/index.html', {'prueba': 1007})
 
 @login_required(login_url='/restaurant/sign-in/')
 def restaurant_home(request):

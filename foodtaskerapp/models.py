@@ -7,7 +7,16 @@ class Restaurant(models.Model):
     name = models.CharField(max_length=500)
     phone = models.CharField(max_length=500)
     address = models.CharField(max_length=500)
-    logo = models.ImageField(upload_to='restaurant_logo/', blank=False)
+    logo = models.ImageField(upload_to='restaurant_logo/', blank=True)
+    time_stamp = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
+
+class Carta(models.Model):
+    restaurante = models.CharField(max_length=200)
+    plato = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.restaurante

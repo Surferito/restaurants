@@ -17,5 +17,8 @@ urlpatterns = [
         {'next_page': '/'},
         name='restaurant-sign-out'),
     url(r'^restaurant/$', views.restaurant_home, name='restaurant-home'),
+    url(r'^restaurants-bd/$', views.restaurants, name='restaurants-bd'),
+    url(r'^mis-platos-preferidos/$', views.mis_preferidos, name='mis-platos-preferidos'),
+    url(r'^prueba-form/$', views.probando_forms, name='prueba-form'),
     url(r'^restaurant/sign-up/', views.restaurant_sign_up, name='restaurant-sign-up'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

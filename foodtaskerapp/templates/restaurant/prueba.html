@@ -1,0 +1,16 @@
+{% extends "restaurant/base.html" %}
+
+{% block head_title %}Restaurantes de la base de datos{% endblock %}
+
+{% block content %}
+    <h1>Guarda tus platos preferidos y si quieres compártelos</h1>
+    <p></p>
+
+    <ul>
+        {% for restaurante in restaurantes %}
+            <li>{{restaurante.name}} | {{restaurante.updated}}| {{restaurante.pk}}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'prueba-form' %}">Añade tus platos preferidos</a>
+
+{% endblock %}

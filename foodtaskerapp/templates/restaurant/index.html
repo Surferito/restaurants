@@ -1,0 +1,10 @@
+{% extends "restaurant/base.html" %}
+
+{% block head_title %}Home de Food Yeah{% endblock %}
+
+{% block content %}
+    <h1>Guarda tus platos preferidos y si quieres compártelos</h1>
+    <p>Ya somos {{prueba}} miembros. Solo se puede acceder con invitación</p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="{% url 'restaurant-sign-in' %}">Solicitar invitación</a></p>
+<p>Puedes ver aquí <a href="mis-platos-preferidos"> mis platos preferidos</a></p>
+{% endblock %}

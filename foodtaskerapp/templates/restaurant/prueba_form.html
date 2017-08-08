@@ -1,0 +1,13 @@
+{% extends "restaurant/base.html" %}
+
+{% block head_title %}Añade el restaurante y tus platos preferidos{% endblock %}
+
+{% block content %}
+    <h1>Añade el restaurante y tus platos preferidos</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Añadir</button>
+    </form>
+
+{% endblock %}

@@ -1,29 +1,13 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home page</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "restaurant/base.html" %}
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Mi css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% block head_title %}Acceso a food yeah{% endblock %}
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</head>
-<body>
-    <h1>Sign in</h1>
+{% block content %}
+    <h1>Solo se puede acceder con invitación</h1>
     <form method="POST">
         {% csrf_token %}
         {{ form }}
-        <button type="submit">Sign In</button>
+        <button type="submit">Acceder</button>
     </form>
-</body>
-</html>
+
+{% endblock %}

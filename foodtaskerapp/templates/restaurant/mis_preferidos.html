@@ -1,0 +1,15 @@
+{% extends "restaurant/base.html" %}
+
+{% block head_title %}Mis platos preferidos{% endblock %}
+
+{% block content %}
+    <h1>Esta es una lista real con mis platos preferidos de Madrid</h1>
+
+    <ul>
+        {% for plato in platos %}
+            <li>{{plato.restaurante}} | {{plato.plato}}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'prueba-form' %}">Puedes añadir tu plato preferido</a>
+
+{% endblock %}

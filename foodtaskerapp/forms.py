@@ -2,7 +2,8 @@ from django import forms
 
 from django.contrib.auth.models import User
 
-from foodtaskerapp.models import Restaurant
+from foodtaskerapp.models import Restaurant, Carta
+
 
 class UserForm(forms.ModelForm):
     email = forms.CharField(max_length=100, required=True)
@@ -15,3 +16,8 @@ class RestaurantForm(forms.ModelForm):
     class Meta:
         model = Restaurant
         fields = ("name", "phone", "address", "logo")
+
+class PruebaForms(forms.ModelForm):
+    class Meta:
+        model = Carta
+        fields = ["restaurante", "plato"]
