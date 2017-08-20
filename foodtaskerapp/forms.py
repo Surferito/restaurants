@@ -2,22 +2,26 @@ from django import forms
 
 from django.contrib.auth.models import User
 
-from foodtaskerapp.models import Restaurant, Carta
+from foodtaskerapp.models import Restaurante
 
 
-class UserForm(forms.ModelForm):
-    email = forms.CharField(max_length=100, required=True)
-    password = forms.CharField(widget=forms.PasswordInput())
+class RegistroUsuario(forms.ModelForm):
     class Meta:
         model = User
-        fields = ("username", "password", "first_name", "last_name", "email")
+        fields = ("email", "username", "password",)
+        labels = {
+            "email": "E-mail",
+            "username": "Nombre de usuario",
+            "password": "Contraseña"
+        }
+        widgets = {
+            "email": forms.EmailInput(attrs={'class':'form-control'}),
+            "username": forms.TextInput(attrs={'class':'form-control'}),
+            "password": forms.PasswordInput(attrs={'class':'form-control'})
+        }
 
 class RestaurantForm(forms.ModelForm):
     class Meta:
-        model = Restaurant
+        model = Restaurante
         fields = ("name", "phone", "address", "logo")
 
-class PruebaForms(forms.ModelForm):
-    class Meta:
-        model = Carta
-        fields = ["restaurante", "plato"]

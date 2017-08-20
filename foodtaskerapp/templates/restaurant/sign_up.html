@@ -3,12 +3,12 @@
 {% block head_title %}Date de alta{% endblock %}
 
 {% block content %}
-    <h1>Restaurant sign up</h1>
+    <h2>Crea tu cuenta para empezar a añadir restaurantes y platos a tu lista</h2>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
+        <p>Escribe tu email, usuario y contraseña</p>
         {{ user_form }}
-        {{ restaurant_form }}
-        <button type="submit">Sign up</button>
+        <button type="submit">Crear cuenta</button>
     </form>
 
 {% endblock %}

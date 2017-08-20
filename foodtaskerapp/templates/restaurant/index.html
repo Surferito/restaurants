@@ -3,8 +3,14 @@
 {% block head_title %}Home de Food Yeah{% endblock %}
 
 {% block content %}
-    <h1>Guarda tus platos preferidos y si quieres compártelos</h1>
+    <h1>Guarda tus platos preferidos y descubre los de tus amigos</h1>
     <p>Ya somos {{prueba}} miembros. Solo se puede acceder con invitación.</p>
-    <p><a class="btn btn-primary btn-lg" role="button" href="{% url 'restaurant-sign-in' %}">Solicitar invitación</a></p>
-<p>Estos son los últimos <a href="ultimos-platos-preferidos"> <strong>platos guardados como favoritos en Madrid</strong></a></p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="{% url 'sign-in' %}">Solicitar invitación</a></p>
+    <h2>Últimas listas de platos añadidas:</h2>
+    <p>Platos preferidos de <a href="jorge"> <strong>Jorge</strong></a></p>
+    <p>Platos preferidos de <a href="ana"> <strong>Ana</strong></a></p>
+    <p>Platos preferidos de <a href="javi"> <strong>Javi</strong></a></p>
+    <p>Platos preferidos de <a href="emilio"> <strong>Emilio </strong></a></p>
+    <p><a href="sign-up">Crea tu cuenta</a></p>
+    <p><a href="sign-in">Entra en tu cuenta</a></p>
 {% endblock %}

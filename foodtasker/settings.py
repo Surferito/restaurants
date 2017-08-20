@@ -122,7 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'account-redirect'
 # Lo ponemos para que guarde el media (logos) donde le digamos
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

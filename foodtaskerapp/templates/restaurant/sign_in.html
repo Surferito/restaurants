@@ -3,12 +3,12 @@
 {% block head_title %}Acceso a food yeah{% endblock %}
 
 {% block content %}
-    <h1>Solo se puede acceder con invitación</h1>
+    <h2>Escribe tu nombre de usuario y contraseña para acceder</h2>
     <form method="POST">
         {% csrf_token %}
         {{ form }}
         <button type="submit">Acceder</button>
     </form>
-    <p>Solo pueden acceder los amigos de las personas registradas. Lo sentimos ...</p>
+    <p>"Que tu medicina sea tu alimento, y el alimento tu medicina." Hipócrates, para muchos el padre de la medicina</p>
 
 {% endblock %}
