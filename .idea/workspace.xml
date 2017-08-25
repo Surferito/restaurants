@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="606d45ba-6cab-4ef8-ba66-9b4591399a60" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/dishes/like.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_plato.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_restaurante.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/editar_plato.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foodtaskerapp/migrations/0002_comentario.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foodtaskerapp/migrations/0003_auto_20170816_2243.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foodtaskerapp/migrations/0004_auto_20170816_2257.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foodtaskerapp/migrations/0005_auto_20170820_0113.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/dishes/nigiri.jpg" afterPath="$PROJECT_DIR$/media/dishes/nigiri.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtasker/urls.py" afterPath="$PROJECT_DIR$/foodtasker/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/admin.py" afterPath="$PROJECT_DIR$/foodtaskerapp/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/forms.py" afterPath="$PROJECT_DIR$/foodtaskerapp/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/foodtaskerapp/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/models.py" afterPath="$PROJECT_DIR$/foodtaskerapp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" afterPath="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/base.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/index.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_in.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_in.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_up.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_up.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/snippets/footer.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/snippets/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/views.py" afterPath="$PROJECT_DIR$/foodtaskerapp/views.py" />
     </list>
     <ignored path="foodtasker.iws" />
     <ignored path=".idea/workspace.xml" />
