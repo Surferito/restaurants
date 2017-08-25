@@ -2,10 +2,23 @@
 
 {% block head_title %}Últimos platos añadidos{% endblock %}
 
-{% block content %}
+{% block header %}
+                {% if usuarios|length < 1 %}
+                <h1>Hola {{ user.username }}!!</h1>
+                    <p><a href="{% url 'anadir-restaurante' %}">Ya puedes añadir tus restaurantes y platos preferidos</a></p>
+                {% endif %}
 
-        {% for usuario in usuarios %}
-            <h1>Los preferidos de {{usuario.user}}</h1>
+                {% if usuarios|length > 0 %}
+                <h1>Los preferidos de {{ user.username }}</h1>
+
+                <!-- esto solo debería salir si el usuario logeado es == al usuario de la lista -->
+                <p><a href="{% url 'anadir-restaurante' %}">Añadir restaurante</a> </p>
+
+                {% endif %}
+{% endblock %}
+
+{% block main %}
+    {% for usuario in usuarios %}
 
             {% for restaurante in usuario.restaurants.all %}
 
@@ -31,7 +44,5 @@
             {% endfor %}
 
         {% endfor %}
-
-    <a href="../admin">Puedes editar tus platos desde el admin</a>
 
 {% endblock %}

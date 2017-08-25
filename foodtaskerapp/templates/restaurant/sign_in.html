@@ -2,13 +2,41 @@
 
 {% block head_title %}Acceso a food yeah{% endblock %}
 
-{% block content %}
+{% block header %}
     <h2>Escribe tu nombre de usuario y contraseña para acceder</h2>
+{% endblock %}
+{% block main %}
     <form method="POST">
         {% csrf_token %}
-        {{ form }}
-        <button type="submit">Acceder</button>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label>Nombre de usuario</label>
+                    {{ form.username.errors }}
+                    <input id="nombreUsuario" class="form-control" type="text" name="username" placeholder="Escribe tu nombre de usuario">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    {{ form.password.errors }}
+                    <input id="password" class="form-control" type="password" name="password" placeholder="Escribe tu contraseña...">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <button class="btn btn-primary" id="submiteamos" type="submit">Acceder a mi cuenta</button>
+                    <p><a href="{% url 'sign-up' %}">¿Olvidaste tu contraseña?</a></p>
+                </div>
+            </div>
+        </div>
     </form>
-    <p>"Que tu medicina sea tu alimento, y el alimento tu medicina." Hipócrates, para muchos el padre de la medicina</p>
+    <blockquote>"Que tu medicina sea tu alimento, y el alimento tu medicina." Hipócrates, para muchos el padre de la medicina</blockquote>
 
 {% endblock %}

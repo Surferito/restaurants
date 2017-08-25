@@ -1,0 +1,138 @@
+{% extends "restaurant/base.html" %}
+
+{% block head_title %}Añadir restaurante{% endblock %}
+
+{% block header %}
+        <h1 id="h1_crear_cuenta"><span id="span_crear_cuenta">Añade primero el restaurante</span> Se guardará automáticamente el tlf y la dirección</h1>
+{% endblock %}
+
+{% block main %}
+    <form id="formulario">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="contenedor_input">
+                    <input id="restaurantes" class="estilo_input" type="text" name="name" placeholder="Nombre del restaurante">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="contenedor_input">
+                    <select onchange="getTipo()" class="estilo_input" id="id_tipo" name="tipo" required="">
+                        <option value="" selected disabled hidden>Elige el tipo de restaurante/comida</option>
+                        {% for tipo in tipos %}
+                            <option value="{{ tipo.id }}">{{ tipo }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <button id="boton" class="btn btn-primary btn-lg" id="submiteamos" type="submit">Añadir restaurante</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?&libraries=places&key=AIzaSyBJG1IigUDH3ha8CLQM6tBEGMKW0AQtFyI"></script>
+
+    <script type="text/javascript">
+
+	//creamos una variable con nuestro input
+
+	var input = document.getElementById('restaurantes');
+
+	//filtramos la el autocomplete por negocios
+
+	var options = {
+	  types: ['establishment']
+	};
+
+	//ejecutamos la funcion autocomplete con las variables de arriba y lo guardamos en variable
+
+	var autocomplete = new google.maps.places.Autocomplete(input, options);
+
+	//creamos una funcion que se ejecuta cada vez que la variable autocomplete cambie de valor
+
+
+
+    function getTipo(){
+            var tipoField = document.getElementById("id_tipo");
+            var tipo = tipoField.options[tipoField.selectedIndex].text;
+            console.log(tipo);
+            return tipo;
+        }
+
+
+	autocomplete.addListener('place_changed', function() {
+
+        //ejecutamos la funcion getPlace de la variable autocomplete para pedir la info del sitio y la guardamos en una variable place
+
+        var place = autocomplete.getPlace();
+
+        //separamos los valores del json que nos interesan
+
+        var id = place.id;
+        var name = place.name;
+        var address = place.formatted_address;
+        var phone = place.international_phone_number;
+        var rating = place.rating;
+
+        console.log(place);
+        console.log(name)
+
+        $(document).on("submit", "#formulario",  function(e){
+        e.preventDefault();
+
+        var tipo = getTipo();
+        if (!name){
+            name = document.getElementById("restaurantes")
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '/enviando/',
+            data:{
+                'id': id,
+                'name': name,
+                'address': address,
+                'phone': phone,
+                'rating': rating,
+                'tipo': tipo,
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            },
+
+
+            success: function(data){
+
+                var id = data.split("$")[1];
+
+                var host = window.location.host;
+                var protol = window.location.protocol;
+
+                window.location.href = protol + "//" + host + "/" + id + "/anadir-plato" ;
+
+            },
+
+            error: function() {
+                console.log("Error al enviar datos")
+          }
+        });
+
+
+        });
+
+
+    });
+
+
+    </script>
+
+
+{% endblock %}

@@ -1,14 +1,48 @@
 {% extends "restaurant/base.html" %}
 
-{% block head_title %}Date de alta{% endblock %}
+{% block head_title %}Crear cuenta{% endblock %}
 
-{% block content %}
-    <h2>Crea tu cuenta para empezar a añadir restaurantes y platos a tu lista</h2>
-    <form method="POST" enctype="multipart/form-data">
+{% block header %}
+    <h1 id="h1_crear_cuenta"><span id="span_crear_cuenta">Crea tu cuenta</span> Empieza a añadir restaurantes y platos a tu lista</h1>
+{% endblock %}
+
+{% block main %}
+    <form method="POST">
         {% csrf_token %}
-        <p>Escribe tu email, usuario y contraseña</p>
-        {{ user_form }}
-        <button type="submit">Crear cuenta</button>
-    </form>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="contenedor_input">
+                    <input id="nombreUsuario" class="estilo_input" type="text" name="username" placeholder="Nombre de usuario">
+                </div>
+                {{ user_form.username.errors }}
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="contenedor_input">
+                        <input id="email" class="estilo_input" type="text" name="email" placeholder="Email">
+                </div>
+                {{ user_form.email.errors }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="contenedor_input">
+                    <input id="password" class="estilo_input" type="password" name="password" placeholder="Contraseña">
+                </div>
+                {{ user_form.password.errors }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <button id="boton" class="btn btn-primary btn-lg" id="submiteamos" type="submit">Crear cuenta</button>
+                    <p>¿Ya tienes cuenta? <a href="{% url 'sign-in' %}"> Log in</a></p>
+                </div>
+            </div>
+        </div>
+    </form>
 {% endblock %}

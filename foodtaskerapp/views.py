@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.decorators import login_required
-from foodtaskerapp.forms import RestaurantForm, RegistroUsuario
+from foodtaskerapp.forms import RestaurantForm, RegistroUsuario, PlatoForm, Fotos_platoForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
 
-from .models import Restaurante, Plato, Usuario, TipoComida, Comentario
+from .models import Restaurante, Plato, Usuario, TipoComida, Comentario_restaurante, Comentario_plato
 
 
 # Create your views here.
@@ -19,19 +19,23 @@ def restaurants(request):
     return render(request, template_name, context)
 
 def preferidos_por_usuario(request, name):
+
     print(name)
-    name_lowercase = name.lower()
+
     template_name = "restaurant/preferidos_usuario.html"
-    queryuser = User.objects.filter(username=name_lowercase)
+    queryuser = User.objects.get(username=name)
     queryset = Usuario.objects.filter(user=queryuser)
     print('usuarios', queryset)
-    queryset1 = Comentario.objects.filter(user=queryset)
+    queryset1 = Comentario_restaurante.objects.filter(user=queryset)
     print('comentarios: ', queryset1)
     context = {
+        "user": queryuser,
         "usuarios": queryset,
         "comentarios": queryset1
     }
     return render(request, template_name, context)
+
+
 
 def mis_preferidos(request):
     template_name = "restaurant/mis_preferidos.html"
@@ -43,20 +47,6 @@ def mis_preferidos(request):
         "usuarios": queryset,
         "comentarios": queryset1
     }
-    return render(request, template_name, context)
-
-
-def probando_forms(request):
-    form = PruebaForms(request.POST or None)
-    errors = None
-    if form.is_valid():
-        form.save()
-        return redirect(mis_preferidos)
-    if form.errors:
-        errors = form.errors
-
-    template_name = "restaurant/prueba_form.html"
-    context = {"form": form, "errors": errors}
     return render(request, template_name, context)
 
 
@@ -93,3 +83,117 @@ def usuario_sign_up(request):
     return render(request, 'restaurant/sign_up.html', {
         "user_form": user_form,
     })
+
+def anadir_restaurante(request):
+    restaurante_form = RestaurantForm()
+    tipos = TipoComida.objects.all()
+
+    if request.method == "POST":
+        restaurante_form = RestaurantForm(request.POST)
+
+        if restaurante_form.is_valid():
+            restaurante_form.save()
+            return redirect(account_redirect)
+
+    return render(request, 'restaurant/anadir_restaurante.html', {
+        "restaurant_form": restaurante_form,
+        "tipos": tipos,
+    })
+
+def ajax_enviar_restaurantes(request):
+    if request.method == "POST":
+        id = request.POST['id']
+        name = request.POST['name']
+        print("nombre del rest: ", name)
+        address = request.POST['address']
+        phone = request.POST['phone']
+        rating = request.POST['rating']
+        tipo = request.POST['tipo']
+
+
+        print("tipo de comida: ", tipo)
+        try:
+            restaurante = Restaurante.objects.get(google_id=id)
+            print("Restaurante ya guardado en la base de datos")
+        except Restaurante.DoesNotExist:
+            try:
+                tipo_comida = TipoComida.objects.get(tipo__iexact=tipo)
+            except TipoComida.DoesNotExist:
+                tipo_comida = TipoComida(tipo=tipo)
+                tipo_comida.save()
+            restaurante = Restaurante(name=name, phone= phone, address = address, tipo = tipo_comida, google_id = id, rating = rating)
+            restaurante.save()
+
+        #guardamos usuario si no guardado y añadimos restaurante
+        user_pk = request.user.pk
+        print("este es el pk del user", user_pk)
+        user = User.objects.get(pk=user_pk)
+        print("user1.....", user)
+        try:
+            usuario = Usuario.objects.get(user=user)
+            print('usuario = Usuario(user=user)')
+        except Usuario.DoesNotExist:
+            usuario = Usuario(user=user)
+            usuario.save()
+        usuario.restaurants.add(restaurante)
+        print('usuario.restaurants.add(restaurante)')
+        usuario.save()
+
+        data = 'success$' + id
+    return HttpResponse(data)
+
+
+def anadir_plato(request, id_restaurante):
+    usuario_pk = request.user.pk
+    user = User.objects.get(pk=usuario_pk)
+    plato_form = PlatoForm()
+    fotos_plato_form = Fotos_platoForm()
+
+    #le mandamos al template unicamente los platos del restaurante elegido
+    restaurante_elegido = Restaurante.objects.get(google_id=id_restaurante)
+    platos = Plato.objects.filter(restaurante=restaurante_elegido)
+
+    if request.method == "POST":
+        plato_form = PlatoForm(request.POST)
+        fotos_plato_form = Fotos_platoForm(request.POST, request.FILES)
+
+        if plato_form.is_valid() and fotos_plato_form.is_valid():
+
+            #guardamos el plato, necesita el objeto restaurante. Se lo pasamos via url
+
+            plato = plato_form.cleaned_data["plato"]
+            print("Este es el plato del form: ", plato)
+            nuevo_plato = Plato(restaurante= restaurante_elegido, plato= plato)
+            nuevo_plato.save()
+            print("plato guardado: ", nuevo_plato)
+
+            #Guardamos el plato al usuario
+            usuario_pk = request.user.pk
+            print("este es el pk del user", usuario_pk)
+            user1 = User.objects.get(pk=usuario_pk)
+            usuario = Usuario.objects.get(user=user1)
+            print("Guardamos el usuario con su restaurante", usuario)
+            usuario.platos.add(nuevo_plato)
+            usuario.save()
+            print("Guardamos el plato del usuario", usuario)
+
+            #guardamos la foto del plato
+
+
+            return redirect(account_redirect)
+
+    return render(request, 'restaurant/anadir_plato.html', {
+        "user": user,
+        "plato_form": plato_form,
+        "fotos_plato_form": fotos_plato_form,
+        "platos": platos,
+        "restaurante": restaurante_elegido,
+    })
+
+#esta funcion devuelve el usuario actual dando por hecho que el usuario ya esta creado
+def get_user(request):
+    user_pk = request.user.pk
+    print("este es el pk del user", user_pk)
+    user = User.objects.get(pk=user_pk)
+    usuario = Usuario.objects.get(user=user)
+    return usuario

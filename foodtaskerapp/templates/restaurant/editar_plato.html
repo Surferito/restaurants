@@ -1,0 +1,63 @@
+{% extends "restaurant/base.html" %}
+
+{% block head_title %}Añadir plato{% endblock %}
+
+{% block header %}
+    <h2>Añade el plato</h2>
+    <p>Restaurante {{ restaurante.name }} </p>
+{% endblock %}
+
+{% block main %}
+    <form id="formulario">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label>Nombre del plato</label>
+                    <input id="plato" class="form-control" type="text" name="name" placeholder="Escribe el nombre del plato">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <p>Si quieres puedes añadir un comentario al plato, una foto y el precio</p>
+                    <label>Comenta el plato</label>
+                    <input id="comentario" class="form-control" type="text" name="comentario" placeholder="Escribe aquí el comentario">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label>Elige la foto que quieres subir</label>
+                    {{ fotos_plato_form.foto }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label>Precio del plato</label>
+                    <input id="precio" class="form-control" type="text" name="precio" placeholder="Escribe el precio...">
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <button class="btn btn-primary" id="submiteamos" type="submit">Añadir plato</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

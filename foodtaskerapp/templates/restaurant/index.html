@@ -2,15 +2,16 @@
 
 {% block head_title %}Home de Food Yeah{% endblock %}
 
-{% block content %}
-    <h1>Guarda tus platos preferidos y descubre los de tus amigos</h1>
-    <p>Ya somos {{prueba}} miembros.</p>
-    <p><a class="btn btn-primary btn-lg" role="button" href="{% url 'sign-in' %}">Entra en tu cuenta</a></p>
-    <h2>Últimas listas de platos añadidas:</h2>
-    <p>Platos preferidos de <a href="jorge"> <strong>Jorge</strong></a></p>
-    <p>Platos preferidos de <a href="ana"> <strong>Ana</strong></a></p>
-    <p>Platos preferidos de <a href="javi"> <strong>Javi</strong></a></p>
-    <p>Platos preferidos de <a href="emilio"> <strong>Emilio </strong></a></p>
-    <p><a href="sign-up">Crea tu cuenta</a></p>
-    
+{% block header %}
+    <h1 id="text_header"><span id="logo">Superplatos</span> Guarda tus restaurantes y platos preferidos.</h1>
+    <p>Superplatos está en beta. Muy pronto solo se podrá acceder con invitación.</p>
+    <p><a id="boton" class="btn btn-primary btn-lg" role="button" href="{% url 'sign-up' %}">Añade tu primer restaurante/plato</a></p>
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+    <h2>Últimas listas añadidas</h2>
+    <p>Lista de <a href="emilio"> <strong>Emilio </strong></a></p>
+    <p><a href="{% url 'sign-in' %}">Log in</a></p>
+    </div>
 {% endblock %}
