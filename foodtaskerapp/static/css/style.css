@@ -48,6 +48,22 @@ a:focus, a:hover{
     margin-bottom: 10px;
 }
 
+#boton_no_anadir {
+    font-weight: 700;
+    color: #FF5A5F !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    border-radius: 4px !important;
+    border: 1px solid #FF5A5F !important;
+    background: transparent !important;
+    height: 47px !important;
+    text-align: center !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 h2 {
     font-size: 22px;
     color: #484848 !important;
