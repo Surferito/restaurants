@@ -4,8 +4,10 @@
 
 {% block header %}
                 {% if usuarios|length < 1 %}
-                <h1>Hola {{ user.username }}!!</h1>
-                    <p><a href="{% url 'anadir-restaurante' %}">Ya puedes añadir tus restaurantes y platos preferidos</a></p>
+                <h1 id="h1_crear_cuenta">Hola <span id="span_crear_cuenta">{{ user.username }}!</span></h1>
+                    <p>Welcome ;) </p>
+
+                    <p id="p_anadir_restaurante"><a href="{% url 'anadir-restaurante' %}">Haz click aquí para añadir tus restaurantes y platos preferidos a tu lista</a></p>
                 {% endif %}
 
                 {% if usuarios|length > 0 %}
