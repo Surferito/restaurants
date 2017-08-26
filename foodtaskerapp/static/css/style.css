@@ -172,3 +172,8 @@ label {
     padding: 5px 15px 10px;
     max-width: 600px;
 }
+
+#p_anadir_restaurante {
+    font-size: 18px;
+    font-weight: 400;
+}

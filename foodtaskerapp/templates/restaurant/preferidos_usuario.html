@@ -9,10 +9,12 @@
                 {% endif %}
 
                 {% if usuarios|length > 0 %}
-                <h1>Los preferidos de {{ user.username }}</h1>
+                    <h1 id="h1_crear_cuenta">Los preferidos de <span id="span_crear_cuenta">{{ user.username }}</span> </h1>
+
+
 
                 <!-- esto solo debería salir si el usuario logeado es == al usuario de la lista -->
-                <p><a href="{% url 'anadir-restaurante' %}">Añadir restaurante</a> </p>
+                <p id="p_anadir_restaurante"><a href="{% url 'anadir-restaurante' %}">Añadir restaurante</a> </p>
 
                 {% endif %}
 {% endblock %}

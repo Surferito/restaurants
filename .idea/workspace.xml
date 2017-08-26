@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="606d45ba-6cab-4ef8-ba66-9b4591399a60" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_restaurante.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_restaurante.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" afterPath="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html" />
     </list>
     <ignored path="foodtasker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,21 +64,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/foodtaskerapp/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.083334">
-              <caret line="67" column="20" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.90797544">
+              <caret line="177" column="20" selection-start-line="177" selection-start-column="20" selection-end-line="177" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="anadir_restaurante.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="anadir_restaurante.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_restaurante.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3220859">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.875">
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -86,8 +87,8 @@
       <file leaf-file-name="anadir_plato.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_plato.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
-              <caret line="32" column="42" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="42" />
+            <state vertical-scroll-proportion="-3.125">
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -106,8 +107,8 @@
       <file leaf-file-name="preferidos_usuario.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.833333">
-              <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="16" column="43" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -154,10 +155,10 @@
         <option value="$PROJECT_DIR$/foodtaskerapp/views.py" />
         <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/index.html" />
         <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/base.html" />
-        <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html" />
         <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_plato.html" />
-        <option value="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" />
         <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_restaurante.html" />
+        <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html" />
+        <option value="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" />
       </list>
     </option>
   </component>
@@ -1000,34 +1001,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html">
+    <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_restaurante.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.833333">
-          <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+        <state vertical-scroll-proportion="-11.875">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_plato.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="42" />
+        <state vertical-scroll-proportion="-3.125">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/foodtaskerapp/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.083334">
-          <caret line="67" column="20" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_restaurante.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3220859">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.90797544">
+          <caret line="177" column="20" selection-start-line="177" selection-start-column="20" selection-end-line="177" selection-end-column="20" />
           <folding />
         </state>
       </provider>
