@@ -21,28 +21,33 @@
     {% for usuario in usuarios %}
 
             {% for restaurante in usuario.restaurants.all %}
-
-                <h3><a href="tel: {{restaurante.phone}}">{{restaurante.name}}</a> | {{restaurante.tipo}} | {{ restaurante.address }}</h3>
+                <div class="caja_restaurante">
+                <h2 id="h2nombre_restaurante"><a href="tel: {{restaurante.phone}}">{{restaurante.name}}</a></h2>
+                <p id="direccion_restaurante">{{ restaurante.address }}</p>
+                <p ><span id="tipo_restaurante">{{restaurante.tipo}}</span></p>
 
                 {% for comentario in comentarios %}
                     {% if comentario.user|slugify == usuario.user|slugify and comentario.restaurante|slugify == restaurante.name|slugify %}
                         <p>{{ comentario }}</p>
                     {% endif %}
                 {% endfor %}
+                <hr>
 
                 {% for plato in usuario.platos.all %}
                     {% if restaurante.name|slugify == plato.restaurante|slugify %}
-                        <p>{{plato.plato}} {% if plato.precio %} | Precio: {{ plato.precio }}€{% endif %}</p>
+                        <p id="nombre_plato">{{plato.plato}} {% if plato.precio %} | Precio: {{ plato.precio }}€{% endif %}</p>
                         {% if plato.foto %}
                             <a href="{{ plato.foto.url }}">
                                 <img src="{{ plato.foto.url }}" width="80" height="80" alt="foto de {{plato.plato}}"/>
                             </a>
+
                         {% endif %}
                     {% endif %}
                 {% endfor %}
-
+    </div>
             {% endfor %}
 
         {% endfor %}
+
 
 {% endblock %}
