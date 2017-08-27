@@ -3,29 +3,28 @@
 {% block head_title %}Últimos platos añadidos{% endblock %}
 
 {% block header %}
-                {% if usuarios|length < 1 %}
-                <h1 id="h1_crear_cuenta">Hola <span id="span_crear_cuenta">{{ user.username }}!</span></h1>
-                    <p>Welcome ;) </p>
 
-                    <p id="p_anadir_restaurante"><a href="{% url 'anadir-restaurante' %}">Haz click aquí para añadir tus restaurantes y platos preferidos a tu lista</a></p>
-                {% endif %}
+    {% if usuarios|length < 1 %}
+        <h1 id="h1_crear_cuenta">Hola <span id="span_crear_cuenta">{{ user.username }}!</span></h1>
+        <p>Welcome ;) </p>
+        <p id="p_anadir_restaurante"><a href="{% url 'anadir-restaurante' %}">Haz click aquí para añadir tus restaurantes y platos preferidos a tu lista</a></p>
+        <!-- meter frase de hipócrates de la comida -->
+    {% endif %}
 
-                {% if usuarios|length > 0 %}
-                    <h1 id="h1_crear_cuenta">Los preferidos de <span id="span_crear_cuenta">{{ user.username }}</span> </h1>
+    {% if usuarios|length > 0 %}
+        <h1 id="h1_crear_cuenta">Los preferidos de <span id="span_crear_cuenta">{{ user.username }}</span> </h1>
+        <!-- esto solo debería salir si el usuario logeado es == al usuario de la lista -->
+        <p id="p_anadir_restaurante"><a href="{% url 'anadir-restaurante' %}">Añadir restaurante/plato</a> </p>
+    {% endif %}
 
-
-
-                <!-- esto solo debería salir si el usuario logeado es == al usuario de la lista -->
-                <p id="p_anadir_restaurante"><a href="{% url 'anadir-restaurante' %}">Añadir restaurante</a> </p>
-
-                {% endif %}
 {% endblock %}
 
 {% block main %}
+
     {% for usuario in usuarios %}
 
-            {% for restaurante in usuario.restaurants.all %}
-                <div class="caja_restaurante">
+        {% for restaurante in usuario.restaurants.all %}
+            <div class="caja_restaurante">
                 <h2 id="h2nombre_restaurante"><a href="tel: {{restaurante.phone}}">{{restaurante.name}}</a></h2>
                 <p id="direccion_restaurante">{{ restaurante.address }}</p>
                 <p ><span id="tipo_restaurante">{{restaurante.tipo}}</span></p>
@@ -38,20 +37,18 @@
                 <hr>
 
                 {% for plato in usuario.platos.all %}
-                    {% if restaurante.name|slugify == plato.restaurante|slugify %}
+                    {% if restaurante.id == plato.restaurante.id %}
                         <p id="nombre_plato">{{plato.plato}} {% if plato.precio %} | Precio: {{ plato.precio }}€{% endif %}</p>
                         {% if plato.foto %}
                             <a href="{{ plato.foto.url }}">
                                 <img src="{{ plato.foto.url }}" width="80" height="80" alt="foto de {{plato.plato}}"/>
                             </a>
-
                         {% endif %}
                     {% endif %}
                 {% endfor %}
-    </div>
-            {% endfor %}
-
+            </div>
         {% endfor %}
+    {% endfor %}
 
 
 {% endblock %}

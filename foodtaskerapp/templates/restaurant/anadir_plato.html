@@ -3,7 +3,7 @@
 {% block head_title %}Añadir plato{% endblock %}
 
 {% block header %}
-    <h1 id="h1_crear_cuenta"><span id="span_crear_cuenta">Añade tu plato preferido de {{ restaurante.name }}</span> Puedes añadir más platos luego</h1>
+    <h1 id="h1_crear_cuenta"><span id="span_crear_cuenta">Añade tu plato preferido de {{ restaurante.name }}</span> Puedes añadir foto, comentario o más platos luego</h1>
 {% endblock %}
 
 {% block main %}
@@ -13,15 +13,6 @@
             <div class="col-md-6 col-sm-6">
                 <div class="contenedor_input">
                     <input id="plato" class="estilo_input" type="text" name="plato" placeholder="Nombre del plato">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <div class="contenedor_input">
-                    <label>¿Quieres subir alguna foto para este plato?</label>
-                    {{ fotos_plato_form.foto }}
                 </div>
             </div>
         </div>

@@ -22,7 +22,6 @@ urlpatterns = [
     url(r'^(?P<id_restaurante>.+)/anadir-plato/$', views.anadir_plato, name='anadir-plato'),
     url(r'^enviando/$', views.ajax_enviar_restaurantes),
     url(r'^restaurants-bd/$', views.restaurants, name='restaurants-bd'),
-    url(r'^platos-preferidos/$', views.mis_preferidos, name='platos-preferidos'),
     url(r'^sign-up/$', views.usuario_sign_up, name='sign-up'),
     url(r'^(?P<name>.+)/$', views.preferidos_por_usuario, name='usuario-preferidos'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

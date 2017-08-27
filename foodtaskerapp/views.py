@@ -20,9 +20,8 @@ def restaurants(request):
 
 def preferidos_por_usuario(request, name):
 
-    print(name)
-
     template_name = "restaurant/preferidos_usuario.html"
+
     queryuser = User.objects.get(username=name)
     queryset = Usuario.objects.filter(user=queryuser)
     print('usuarios', queryset)
@@ -30,20 +29,6 @@ def preferidos_por_usuario(request, name):
     print('comentarios: ', queryset1)
     context = {
         "user": queryuser,
-        "usuarios": queryset,
-        "comentarios": queryset1
-    }
-    return render(request, template_name, context)
-
-
-
-def mis_preferidos(request):
-    template_name = "restaurant/mis_preferidos.html"
-    queryset = Usuario.objects.all()
-    print('usuarios', queryset)
-    queryset1 = Comentario.objects.all()
-    print('comentarios: ', queryset1)
-    context = {
         "usuarios": queryset,
         "comentarios": queryset1
     }
@@ -142,12 +127,11 @@ def ajax_enviar_restaurantes(request):
         data = 'success$' + id
     return HttpResponse(data)
 
-
+#estaria bien que esta funcion utilizara el id del restaurante nuestro no el id de google (por si el usuario no lo pilla de google)
 def anadir_plato(request, id_restaurante):
     usuario_pk = request.user.pk
     user = User.objects.get(pk=usuario_pk)
     plato_form = PlatoForm()
-    fotos_plato_form = Fotos_platoForm()
 
     #le mandamos al template unicamente los platos del restaurante elegido
     restaurante_elegido = Restaurante.objects.get(google_id=id_restaurante)
@@ -155,9 +139,9 @@ def anadir_plato(request, id_restaurante):
 
     if request.method == "POST":
         plato_form = PlatoForm(request.POST)
-        fotos_plato_form = Fotos_platoForm(request.POST, request.FILES)
+        #fotos_plato_form = Fotos_platoForm(request.POST, request.FILES)
 
-        if plato_form.is_valid() and fotos_plato_form.is_valid():
+        if plato_form.is_valid():
 
             #guardamos el plato, necesita el objeto restaurante. Se lo pasamos via url
 
@@ -168,24 +152,18 @@ def anadir_plato(request, id_restaurante):
             print("plato guardado: ", nuevo_plato)
 
             #Guardamos el plato al usuario
-            usuario_pk = request.user.pk
-            print("este es el pk del user", usuario_pk)
-            user1 = User.objects.get(pk=usuario_pk)
-            usuario = Usuario.objects.get(user=user1)
+
+            usuario = Usuario.objects.get(user=user)
             print("Guardamos el usuario con su restaurante", usuario)
             usuario.platos.add(nuevo_plato)
             usuario.save()
             print("Guardamos el plato del usuario", usuario)
-
-            #guardamos la foto del plato
-
 
             return redirect(account_redirect)
 
     return render(request, 'restaurant/anadir_plato.html', {
         "user": user,
         "plato_form": plato_form,
-        "fotos_plato_form": fotos_plato_form,
         "platos": platos,
         "restaurante": restaurante_elegido,
     })
