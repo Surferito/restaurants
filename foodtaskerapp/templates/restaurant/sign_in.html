@@ -1,42 +1,38 @@
 {% extends "restaurant/base.html" %}
 
-{% block head_title %}Acceso a food yeah{% endblock %}
+{% block head_title %}Accede a tu cuenta{% endblock %}
 
 {% block header %}
-    <h2>Escribe tu nombre de usuario y contraseña para acceder</h2>
+        <h1 id="h1_crear_cuenta"><span id="span_crear_cuenta">Inicia sesión</span> Accede a tu cuenta</h1>
 {% endblock %}
 {% block main %}
     <form method="POST">
         {% csrf_token %}
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="form-group">
-                    <label>Nombre de usuario</label>
-                    {{ form.username.errors }}
-                    <input id="nombreUsuario" class="form-control" type="text" name="username" placeholder="Escribe tu nombre de usuario">
+            <div class="col-md-6 col-sm-6">
+                <div class="contenedor_input">
+                    <input id="nombreUsuario" class="estilo_input" type="text" name="username" placeholder="Nombre de usuario">
                 </div>
+                {{ form.username.errors }}
             </div>
         </div>
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="form-group">
-                    <label>Contraseña</label>
-                    {{ form.password.errors }}
-                    <input id="password" class="form-control" type="password" name="password" placeholder="Escribe tu contraseña...">
+            <div class="col-md-6 col-sm-6">
+                <div class="contenedor_input">
+                    <input id="password" class="estilo_input" type="password" name="password" placeholder="Contraseña">
                 </div>
+                {{ form.password.errors }}
             </div>
         </div>
 
-
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-6">
                 <div class="form-group">
-                    <button class="btn btn-primary" id="submiteamos" type="submit">Acceder a mi cuenta</button>
+                    <button class="btn btn-primary btn-lg" id="boton" type="submit">Acceder a mi cuenta</button>
                     <p><a href="{% url 'sign-up' %}">¿Olvidaste tu contraseña?</a></p>
                 </div>
             </div>
         </div>
     </form>
-    <blockquote>"Que tu medicina sea tu alimento, y el alimento tu medicina." Hipócrates, para muchos el padre de la medicina</blockquote>
 
 {% endblock %}

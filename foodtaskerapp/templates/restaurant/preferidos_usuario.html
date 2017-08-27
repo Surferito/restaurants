@@ -6,9 +6,11 @@
 
     {% if usuarios|length < 1 %}
         <h1 id="h1_crear_cuenta">Hola <span id="span_crear_cuenta">{{ user.username }}!</span></h1>
-        <p>Welcome ;) </p>
+        <p id="p_welcome">Welcome ;) </p>
         <p id="p_anadir_restaurante"><a href="{% url 'anadir-restaurante' %}">Haz click aquí para añadir tus restaurantes y platos preferidos a tu lista</a></p>
         <!-- meter frase de hipócrates de la comida -->
+        <blockquote>"Que tu medicina sea tu alimento, y el alimento tu medicina." Hipócrates, para muchos el padre de la medicina</blockquote>
+
     {% endif %}
 
     {% if usuarios|length > 0 %}
