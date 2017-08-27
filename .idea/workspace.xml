@@ -4,7 +4,6 @@
     <list default="true" id="606d45ba-6cab-4ef8-ba66-9b4591399a60" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" afterPath="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_in.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_in.html" />
     </list>
     <ignored path="foodtasker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,21 +72,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preferidos_usuario.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="preferidos_usuario.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36809817">
-              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="18" column="35" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/foodtaskerapp/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.708333">
-              <caret line="182" column="4" selection-start-line="182" selection-start-column="4" selection-end-line="182" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.49386504">
+              <caret line="183" column="21" selection-start-line="183" selection-start-column="21" selection-end-line="183" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -126,8 +125,8 @@
         <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/anadir_plato.html" />
         <option value="$PROJECT_DIR$/foodtaskerapp/views.py" />
         <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/sign_in.html" />
-        <option value="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" />
         <option value="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html" />
+        <option value="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" />
       </list>
     </option>
   </component>
@@ -984,18 +983,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/foodtaskerapp/static/css/style.css">
+    <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.708333">
-          <caret line="182" column="4" selection-start-line="182" selection-start-column="4" selection-end-line="182" selection-end-column="4" />
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html">
+    <entry file="file://$PROJECT_DIR$/foodtaskerapp/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36809817">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.49386504">
+          <caret line="183" column="21" selection-start-line="183" selection-start-column="21" selection-end-line="183" selection-end-column="21" />
           <folding />
         </state>
       </provider>
