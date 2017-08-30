@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="606d45ba-6cab-4ef8-ba66-9b4591399a60" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/media/restaurant_logo/logo.png" afterPath="$PROJECT_DIR$/media/restaurant_logo/logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" afterPath="$PROJECT_DIR$/foodtaskerapp/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/index.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html" afterPath="$PROJECT_DIR$/foodtaskerapp/templates/restaurant/preferidos_usuario.html" />
     </list>
     <ignored path="foodtasker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/foodtaskerapp/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.76993865">
-              <caret line="231" column="8" selection-start-line="231" selection-start-column="8" selection-end-line="231" selection-end-column="8" />
+              <caret line="220" column="22" selection-start-line="220" selection-start-column="22" selection-end-line="220" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -1036,7 +1033,7 @@
     <entry file="file://$PROJECT_DIR$/foodtaskerapp/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.76993865">
-          <caret line="231" column="8" selection-start-line="231" selection-start-column="8" selection-end-line="231" selection-end-column="8" />
+          <caret line="220" column="22" selection-start-line="220" selection-start-column="22" selection-end-line="220" selection-end-column="22" />
           <folding />
         </state>
       </provider>
