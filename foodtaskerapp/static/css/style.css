@@ -187,3 +187,51 @@ label {
 #p_welcome {
     padding-top: 20px;
 }
+
+/* media queries */
+
+@media (max-width: 600px) {
+
+     /*Estilo para home*/
+    #text_header {
+        font-size: 34px !important;
+        line-height: 47px !important;
+    }
+    #p_header {
+        font-size: 19px;
+    }
+
+    /*Estilo para lista de restaurantes*/
+    .caja_restaurante {
+        padding: 1px 12px 1px;
+    }
+    #h2nombre_restaurante {
+        font-size: 19px;
+        margin-top: 10px;
+        margin-bottom: 4px;
+    }
+    #direccion_restaurante {
+        font-size: 10px;
+        margin: 0 0 0px;
+    }
+    #tipo_restaurante {
+        font-size: 12px;
+    }
+    hr {
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+
+    #nombre_plato {
+        font-size: 16px;
+    }
+    #p_tipo_restaurante {
+        margin: 3px 0 6px;
+    }
+    #p_comentario {
+        
+        font-size: 15px;
+
+    }
+
+}

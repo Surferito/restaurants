@@ -29,11 +29,11 @@
             <div class="caja_restaurante">
                 <h2 id="h2nombre_restaurante"><a href="tel: {{restaurante.phone}}">{{restaurante.name}}</a></h2>
                 <p id="direccion_restaurante">{{ restaurante.address }}</p>
-                <p ><span id="tipo_restaurante">{{restaurante.tipo}}</span></p>
+                <p id="p_tipo_restaurante"><span id="tipo_restaurante">{{restaurante.tipo}}</span></p>
 
                 {% for comentario in comentarios %}
                     {% if comentario.user|slugify == usuario.user|slugify and comentario.restaurante|slugify == restaurante.name|slugify %}
-                        <p>{{ comentario }}</p>
+                        <p id="p_comentario">{{ comentario }}</p>
                     {% endif %}
                 {% endfor %}
                 <hr>
