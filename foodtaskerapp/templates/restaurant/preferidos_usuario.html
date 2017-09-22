@@ -3,42 +3,27 @@
 {% block head_title %}Últimos platos añadidos{% endblock %}
 
 {% block header %}
-
-    {% if usuarios|length < 1 %}
-        <h1 id="h1_crear_cuenta">Hola <span id="span_crear_cuenta">{{ user.username }}!</span></h1>
-        <p id="p_welcome">Welcome ;) </p>
-        <p id="p_anadir_restaurante_1"><a href="{% url 'anadir-restaurante' %}">Haz click aquí para añadir tus restaurantes y platos preferidos a tu lista</a></p>
-        <!-- meter frase de hipócrates de la comida -->
-        <blockquote>"Que tu medicina sea tu alimento, y el alimento tu medicina." Hipócrates, para muchos el padre de la medicina</blockquote>
-
-    {% endif %}
-
-    {% if usuarios|length > 0 %}
         <h1 id="h1_crear_cuenta">Los preferidos de <span id="span_crear_cuenta">{{ user.username }}</span> </h1>
         <!-- esto solo debería salir si el usuario logeado es == al usuario de la lista -->
         <p id="p_anadir_restaurante"><a href="{% url 'anadir-restaurante' %}">Añadir restaurante/plato</a> </p>
-    {% endif %}
-
 {% endblock %}
 
 {% block main %}
 
-    {% for usuario in usuarios %}
-
-        {% for restaurante in usuario.restaurants.all %}
+        {% for restaurante in restaurantes reversed %}
             <div class="caja_restaurante">
                 <h2 id="h2nombre_restaurante"><a href="tel: {{restaurante.phone}}">{{restaurante.name}}</a></h2>
                 <p id="direccion_restaurante">{{ restaurante.address }}</p>
                 <p id="p_tipo_restaurante"><span id="tipo_restaurante">{{restaurante.tipo}}</span></p>
 
                 {% for comentario in comentarios %}
-                    {% if comentario.user|slugify == usuario.user|slugify and comentario.restaurante|slugify == restaurante.name|slugify %}
+                    {% if comentario.restaurante.id == restaurante.id %}
                         <p id="p_comentario">{{ comentario }}</p>
                     {% endif %}
                 {% endfor %}
                 <hr>
 
-                {% for plato in usuario.platos.all %}
+                {% for plato in platos %}
                     {% if restaurante.id == plato.restaurante.id %}
                         <p id="nombre_plato">{{plato.plato}} {% if plato.precio %} | Precio: {{ plato.precio }}€{% endif %}</p>
                         {% if plato.foto %}
@@ -50,7 +35,7 @@
                 {% endfor %}
             </div>
         {% endfor %}
-    {% endfor %}
+
 
 
 {% endblock %}

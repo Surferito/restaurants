@@ -22,15 +22,17 @@ def preferidos_por_usuario(request, name):
 
     template_name = "restaurant/preferidos_usuario.html"
 
-    queryuser = User.objects.get(username=name)
-    queryset = Usuario.objects.filter(user=queryuser)
-    print('usuarios', queryset)
-    queryset1 = Comentario_restaurante.objects.filter(user=queryset)
-    print('comentarios: ', queryset1)
+    user = User.objects.get(username=name)
+    usuario = Usuario.objects.get(user=user)
+    restaurantes = usuario.restaurants.all
+    platos = usuario.platos.all
+    comentarios = Comentario_restaurante.objects.filter(user=usuario)
     context = {
-        "user": queryuser,
-        "usuarios": queryset,
-        "comentarios": queryset1
+        "user": user,
+        "usuario": usuario,
+        "restaurantes": restaurantes,
+        "platos": platos,
+        "comentarios": comentarios
     }
     return render(request, template_name, context)
 
